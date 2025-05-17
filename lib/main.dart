@@ -12,7 +12,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
     await Firebase.initializeApp(
-      options: FirebaseOptions(
+      options: const FirebaseOptions(
           apiKey: "AIzaSyDjIZm7xgZ321cg7pPHSVR_WVZJQrZL_Ek",
           authDomain: "calculators-f98c1.firebaseapp.com",
           projectId: "calculators-f98c1",
