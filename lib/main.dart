@@ -1,12 +1,31 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:interest_calculator/utils/firebase_options.dart';
 import 'package:provider/provider.dart';
 import 'models/calculator_data.dart';
 import 'models/currency_data.dart';
 import 'screens/calculator_screen.dart';
 
-
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+      options: FirebaseOptions(
+          apiKey: "AIzaSyDjIZm7xgZ321cg7pPHSVR_WVZJQrZL_Ek",
+          authDomain: "calculators-f98c1.firebaseapp.com",
+          projectId: "calculators-f98c1",
+          storageBucket: "calculators-f98c1.firebasestorage.app",
+          messagingSenderId: "594013064633",
+          appId: "1:594013064633:web:c86839bc775c7d6fe47a68",
+          measurementId: "G-QVHHLB57M5"),
+    );
+  } else {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  }
   runApp(const MyApp());
 }
 
@@ -17,7 +36,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => CalculatorData()..calculate()),
+        ChangeNotifierProvider(
+            create: (context) => CalculatorData()..calculate()),
         ChangeNotifierProvider(create: (context) => CurrencyData()),
       ],
       child: MaterialApp(
@@ -67,7 +87,8 @@ class MyApp extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               borderSide: const BorderSide(color: Color(0xFF1976D2), width: 2),
             ),
-            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           ),
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(

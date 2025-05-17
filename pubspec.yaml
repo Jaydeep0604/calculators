@@ -50,7 +50,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^5.0.0
+  flutter_lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -64,14 +64,38 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - assets/images/
+#  assets:
+#    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
   # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/to/asset-from-package
+  # https://flutter.dev/to/asset-from-packaError: unable to find directory entry in pubspec.yaml: E:\Calculatord\Intrest\interest_calculator\assets\images\
+  #Waiting for connection from debug service on Chrome...
+  #Restarted application in 641ms.
+  #DartError: Unsupported operation: DefaultFirebaseOptions are not supported for this platform.
+  #dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 288:3  throw_
+  #packages/interest_calculator/utils/firebase_options.dart 24:9                get currentPlatform
+  #packages/interest_calculator/main.dart 12:3                                  <fn>
+  #dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 610:19          <fn>
+  #dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 634:23          <fn>
+  #dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 532:3           _asyncStartSync
+  #packages/interest_calculator/main.dart 16:1                                  main$
+  #web_entrypoint.dart 24:31                                                    <fn>
+  #lib/ui_web/ui_web/initialization.dart 41:15                                  <fn>
+  #dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 610:19          <fn>
+  #dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 634:23          <fn>
+  #dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 581:31          <fn>
+  #dart-sdk/lib/async/zone.dart 1676:54                                         runUnary
+  #dart-sdk/lib/async/future_impl.dart 204:18                                   handleValue
+  #dart-sdk/lib/async/future_impl.dart 902:44                                   handleValueCallback
+  #dart-sdk/lib/async/future_impl.dart 931:13                                   _propagateToListeners
+  #dart-sdk/lib/async/future_impl.dart 707:5                                    [_completeWithValue]
+  #dart-sdk/lib/async/future_impl.dart 777:7                                    callback
+  #dart-sdk/lib/async/schedule_microtask.dart 40:11                             _microtaskLoop
+  #dart-sdk/lib/async/schedule_microtask.dart 49:5                              _startMicrotaskLoop
+  #dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 186:7           <fn>ge
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
